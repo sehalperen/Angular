@@ -1,0 +1,38 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+    <div class="forum-froup row" style="width: 80%;">
+
+        <label class="col-sm-2 col-form-label">Customers</label>
+    <div class="col-sm-10">
+       <select class="form-control" [(ngModel)]="CustomerID">
+           <option>--Select--</option>
+           <option [value]="depName.CustomerID" *ngFor="let depName of CusList2">
+               {{depName.IdentityNumber}}
+           </option>
+       </select>
+    </div>
+        
+        <label class="com-sm-2 col-form-label">CusPhone</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="CusPhone"
+            placeholder="Enter Customer Phone">
+        </div>
+
+        <label class="com-sm-2 col-form-label">Cus Adress</label>
+        <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="CusAdress"
+            placeholder="Enter Customer Adress">
+        </div>
+
+    
+        <button (click)="addDetails()" *ngIf="det.IdCus==0" class="btn btn-primary">
+            Add
+        </button>
+
+        <button (click)="updateDetails()" *ngIf="det.IdCus!==0" class="btn btn-primary">
+            Update
+        </button>
+
+    </div>
+</div>
+
